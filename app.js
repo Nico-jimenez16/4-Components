@@ -12,13 +12,17 @@ Vue.component('mi-primer-component', {
 Vue.component('mi-segundo-component', {
     template: //html
     `    
-        
-        <h1 class="text-3xl">{{ head }}</h1>
-        
-        <div v-for="(item, key) of productos" :key="key">
-            <img src="{{ item.url }}">
-            <p>{{ item.descripcion }}</p>
-            <p>{{ item.precio }}</p>
+        <div>
+            <h1 class="flex justify-center text-4xl mb-4">{{ head }}</h1>
+            <div class="flex flex-wrap w-full justify-center items-center">
+                <div v-for="(item, i) of productos" :key="i" class="flex-col mr-8">
+                    <img :src="item.url">
+                    <div class="flex flex-col items-center">
+                        <h3 class="text-2xl">{{ item.descripcion}} {{ i }}</h3>
+                        <p class="text-xl">$$$ {{ item.precio }}</p>
+                    </div>
+                </div>
+            </div>
         </div>
     
     `,
@@ -27,7 +31,7 @@ Vue.component('mi-segundo-component', {
             type: String
         },
         productos: {
-            type: Object
+            type: Array
         }
     }
 });
@@ -40,25 +44,50 @@ const app = new Vue ({
     data() {
         return {
             title: 'Mi primer componente con VueJs CDN',
-            head: 'Mi segundo componente con VueJs CDN',
+            head: 'Componente de Productos',
             productos: 
             [
                 {
                     url: 'https://www.clarin.com/img/2021/05/20/la-hamburguesa-triple-cheese-bacon___Lj4vcOHr__340x340__1.jpg',
-                    descripcion: 'Hamburguesa doble-1',
+                    descripcion: 'Hamburguesa doble',
                     precio: 100
                 },
                 {
                     url: 'https://www.clarin.com/img/2021/05/20/la-hamburguesa-triple-cheese-bacon___Lj4vcOHr__340x340__1.jpg',
-                    descripcion: 'Hamburguesa doble-2',
+                    descripcion: 'Hamburguesa doble',
                     precio: 200
                 },
                 {
                     url: 'https://www.clarin.com/img/2021/05/20/la-hamburguesa-triple-cheese-bacon___Lj4vcOHr__340x340__1.jpg',
-                    descripcion: 'Hamburguesa doble-3',
+                    descripcion: 'Hamburguesa doble',
+                    precio: 300
+                },
+                {
+                    url: 'https://www.clarin.com/img/2021/05/20/la-hamburguesa-triple-cheese-bacon___Lj4vcOHr__340x340__1.jpg',
+                    descripcion: 'Hamburguesa doble',
+                    precio: 100
+                },
+                {
+                    url: 'https://www.clarin.com/img/2021/05/20/la-hamburguesa-triple-cheese-bacon___Lj4vcOHr__340x340__1.jpg',
+                    descripcion: 'Hamburguesa doble',
+                    precio: 200
+                },
+                {
+                    url: 'https://www.clarin.com/img/2021/05/20/la-hamburguesa-triple-cheese-bacon___Lj4vcOHr__340x340__1.jpg',
+                    descripcion: 'Hamburguesa doble',
+                    precio: 300
+                },
+                {
+                    url: 'https://www.clarin.com/img/2021/05/20/la-hamburguesa-triple-cheese-bacon___Lj4vcOHr__340x340__1.jpg',
+                    descripcion: 'Hamburguesa doble',
+                    precio: 300
+                },
+                {
+                    url: 'https://www.clarin.com/img/2021/05/20/la-hamburguesa-triple-cheese-bacon___Lj4vcOHr__340x340__1.jpg',
+                    descripcion: 'Hamburguesa doble',
                     precio: 300
                 }
-            ]
+            ],
         }
     }
     

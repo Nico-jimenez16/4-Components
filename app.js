@@ -4,9 +4,15 @@ Vue.component('mi-primer-component', {
         <h1 class="text-3xl">{{ title }}</h1>
     
     `,
-    props: [
-        'title'
-    ]
+    // props: [
+    //     'title'
+    // ]
+
+    props: {
+        title: {
+            title: String
+        }
+    }
 });
 
 Vue.component('mi-segundo-component', {
@@ -35,8 +41,6 @@ Vue.component('mi-segundo-component', {
         }
     }
 });
-
-
 
 
 const app = new Vue ({

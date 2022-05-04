@@ -1,7 +1,7 @@
 Vue.component('mi-primer-component', {
     template: //html
     `    
-        <h1 class="text-3xl">{{ title }}</h1>
+        <h1 class="flex justify-center items-center h-full text-3xl">{{ title }}</h1>
     
     `,
     // props: [
@@ -20,12 +20,12 @@ Vue.component('mi-segundo-component', {
     `    
         <div>
             <h1 class="flex justify-center text-4xl mb-4">{{ head }}</h1>
-            <div class="flex flex-wrap w-full justify-center items-center">
-                <div v-for="(item, i) of productos" :key="i" class="flex-col mr-8">
+            <div class="flex flex-wrap w-full justify-center bg-amber-50 items-center">
+                <div v-for="(item, i) of productos" :key="i" class="flex-col m-8 border-[#fff]">
                     <img :src="item.url">
-                    <div class="flex flex-col items-center">
+                    <div class="flex flex-col items-start mt-4">
                         <h3 class="text-2xl">{{ item.descripcion}} {{ i }}</h3>
-                        <p class="text-xl">$$$ {{ item.precio }}</p>
+                        <p class="text-xl mt-2">$ {{ item.precio }}</p>
                     </div>
                 </div>
             </div>
